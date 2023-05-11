@@ -1,2 +1,2 @@
 # Paging Simulator
-cuurently under developement
+currently under developement
