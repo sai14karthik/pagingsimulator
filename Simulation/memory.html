@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Memory Calculation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    #result {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Memory Calculation</h2>
+    <label for="physicalMemorySize">Physical Memory Size (MB):</label>
+    <input type="number" id="physicalMemorySize" min="1" step="1">
+    <label for="logicalMemorySize">Logical Memory Size (MB):</label>
+    <input type="number" id="logicalMemorySize" min="1" step="1">
+    <label for="pageSize">Page Size (MB):</label>
+    <input type="number" id="pageSize" min="1" step="1">
+    <button onclick="calculate()">Calculate</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculate() 
+    {
+      var physicalMemorySize = document.getElementById("physicalMemorySize").value;
+      var logicalMemorySize = document.getElementById("logicalMemorySize").value;
+      var pageSize = document.getElementById("pageSize").value;
+      Noofbitsineachframe=Math.ceil(Math.log2(logicalMemorySize));
+
+      var bitsInLogicalAddress = Math.ceil(Math.log2(logicalMemorySize * 1024 * 1024));
+      var bitsInPhysicalAddress = Math.ceil(Math.log2(physicalMemorySize * 1024 * 1024));
+      var bitsInPage = Math.ceil(Math.log2(pageSize * 1024 * 1024));
+
+
+      var numFrames = Math.floor(physicalMemorySize / pageSize);
+      var numPages = Math.floor(logicalMemorySize / pageSize);
+
+      var numPageTableEntries = Math.ceil(logicalMemorySize / pageSize);
+
+      var pageNumBits = Math.ceil(Math.log2(numPages));
+      var offsetBits = Math.ceil(Math.log2(pageSize * 1024 * 1024));
+
+      var pageTableSize = numPageTableEntries *  Noofbitsineachframe;
+
+      var result = document.getElementById("result");
+      result.innerHTML = `
+        <p>Number of Bits in Logical Address: ${bitsInLogicalAddress}</p>
+        <p>Number of Bits in Physical Address: ${bitsInPhysicalAddress}</p>
+        <p>Number of Bits in Page: ${bitsInPage}</p>
+        <p>Number of Frames: ${numFrames}</p>
+        <p>Number of Pages: ${numPages}</p>
+        <p>Number of Entries in Page Table: ${numPageTableEntries}</p>
+        <p>Page Number Bits: ${pageNumBits}</p>
+        <p>Offset Bits: ${offsetBits}</p>
+        <p>Size of Page Table: ${pageTableSize} bits</p>`;
+    }
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Paging in Operating Systems</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .pre{
+      margin-right: 20px;
+      margin-left: 15px;
+    }
+    .nxt{
+margin-right: 40px;
+margin-left: 100px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+    <h1>
+        Non-contiguous allocation
+    </h1>
+    <img src="src/difference-between-contiguous-and-non-contiguous-allocation-0-1643190668.jpg.png" alt="Difference">
+  
+<p>
+    Non-contiguous allocation, also known as dynamic or linked allocation, is a memory allocation technique used in operating systems to allocate memory to processes that do not require a contiguous block of memory. In this technique, each process is allocated a series of non-contiguous blocks of memory that can be located anywhere in the physical memory.
+Non-contiguous allocation involves the use of pointers to link the non-contiguous memory blocks allocated to a process. These pointers are used by the operating system to keep track of the memory blocks allocated to the process and to locate them during the execution of the process.
+</p>
+<p>
+    There are several advantages to non-contiguous allocation. 
+
+    First, it reduces internal fragmentation since memory blocks can be allocated as needed, regardless of their physical location. Second, it allows processes to be allocated memory in a more flexible and efficient manner since the operating system can allocate memory to a process wherever free memory is available. 
+</p>
+<p>
+    However, non-contiguous allocation also has some disadvantages.
+
+ It can lead to external fragmentation, where the available memory is broken into small, non-contiguous blocks, making it difficult to allocate large blocks of memory to a process. Additionally, the use of pointers to link memory blocks can introduce additional overhead, leading to slower memory allocation and deallocation times.
+
+
+</p>
+<p>
+    There are five types of Non-Contiguous Allocation of Memory in the Operating System:
+    <li>
+
+Paging
+
+    </li>
+    <li>
+        Multilevel Paging
+
+    </li>
+    <li>
+  
+        Inverted Paging
+       
+    </li>
+    <li>
+        Segmentation
+     
+    </li>
+    <li>
+        Segmented Paging 
+    </li>
+</p>
+<center>
+  <a href="index.html" style="text-decoration: none" class="pre">Previous</a>
+  <a href="home.html" style="text-decoration: none;" class="nxt">Next</a>
+  <br>
+
+  <br>
+  <a href="simulation.html" target="_blank" style="text-decoration: none;">Simulation</a>
+  <br>
+  <br>
+  <a href="index.html" style="text-decoration: none;">Home</a>
+
+</center>
+  
+</body>
+</html>
