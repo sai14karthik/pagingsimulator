@@ -2,8 +2,7 @@
 
 click on the link below to visit the site 
 
-https://pagingsimualtor.netlify.app/index.html
-
+https://pagingsimualtor.netlify.app/
 # Tech Stack 
 HTML, CSS, JS
 
