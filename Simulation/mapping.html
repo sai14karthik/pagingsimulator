@@ -39,7 +39,7 @@
     <h2>Logical to Physical Address Conversion</h2>
     <label for="logicalAddress">Logical Address:</label>
     <input type="number" id="logicalAddress" min="0">
-    <label for="pageSize">Page Size (bytes):</label>
+    <label for="pageSize">Page Size (MB):</label>
     <input type="number" id="pageSize" min="1">
     <label for="pageTable">Page Table Entries (comma-separated):</label>
     <input type="text" id="pageTable">
@@ -50,7 +50,8 @@
   <script>
     function convertLogicalToPhysical() {
       var logicalAddress = parseInt(document.getElementById("logicalAddress").value);
-      var pageSize = parseInt(document.getElementById("pageSize").value);
+      var pageSizeMB = parseInt(document.getElementById("pageSize").value);
+      var pageSize = pageSizeMB * 1024 * 1024;
       var pageTableInput = document.getElementById("pageTable").value;
       var pageTable = pageTableInput.split(",").map(function (entry) {
         return parseInt(entry.trim());
@@ -76,6 +77,4 @@
         result.innerHTML = "<p>Invalid logical address!</p>";
       }
     }
-  </script>
-</body>
-</html>
+  </script
