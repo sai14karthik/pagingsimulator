@@ -1,8 +1,7 @@
 # Paging Simulator
 
 click on the link below to visit the site 
-
-https://pagingsimualtor.netlify.app/index.html
+https://virtualmemorymanager.netlify.app
 # Tech Stack 
 HTML, CSS, JS
 
